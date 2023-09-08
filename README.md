@@ -1,6 +1,6 @@
 # Gilded Rose Refactoring Kata Fork
 
-Python code refactoring
+Python code refactoring challenge for learning purpose. As every refactoring, the code behavior should NOT change after the improvements. The goal is to make it easier to add a new category of item. 
 
 # Gilded Rose Refactoring Kata
 
@@ -11,7 +11,7 @@ I use this kata as part of my work as a technical coach. I wrote a lot about the
 
 ## How to use this Kata
 
-The simplest way is to just clone the code and start hacking away improving the design. You'll want to look at the ["Gilded Rose Requirements"](https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/main/GildedRoseRequirements.txt) which explains what the code is for. I strongly advise you that you'll also need some tests if you want to make sure you don't break the code while you refactor.
+The simplest way is to just clone the code and start hacking away improving the design. You'll want to look at the ["Gilded Rose Requirements"](https://github.com/rpenna/GildedRose-Refactoring-Kata/blob/main/GildedRoseRequirements.txt) which explains what the code is for. I strongly advise you that you'll also need some tests if you want to make sure you don't break the code while you refactor.
 
 You could write some unit tests yourself, using the requirements to identify suitable test cases. I've provided a failing unit test in a popular test framework as a starting point for most languages.
 
