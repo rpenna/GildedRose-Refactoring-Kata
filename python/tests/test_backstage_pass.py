@@ -58,3 +58,10 @@ def test_given_an_expired_backstage_pass_when_update_quality_then_quality_should
     gilded_rose = GildedRose([backstage_pass])
     gilded_rose.update_quality()
     assert gilded_rose.items[0].quality == 0
+
+
+def test_given_an_expired_sell_in_with_max_quality_backstage_pass_when_update_quality_then_quality_should_be_zero():
+    backstage_pass = Item(BACKSTAGE_PASS, EXPIRED_SELL_IN, MAX_QUALITY)
+    gilded_rose = GildedRose([backstage_pass])
+    gilded_rose.update_quality()
+    assert gilded_rose.items[0].quality == 0
