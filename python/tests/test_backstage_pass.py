@@ -74,6 +74,13 @@ def test_given_a_short_term_sell_in_with_max_quality_backstage_pass_when_update_
     assert gilded_rose.items[0].quality == MAX_QUALITY
 
 
+def test_given_an_expired_backstage_pass_when_update_quality_then_it_should_decresase_sell_in_by_1():
+    backstage_pass = Item(BACKSTAGE_PASS, EXPIRED_SELL_IN, DEFAULT_QUALITY)
+    gilded_rose = GildedRose([backstage_pass])
+    gilded_rose.update_quality()
+    assert gilded_rose.items[0].sell_in == EXPIRED_SELL_IN - 1
+
+
 def test_given_an_expired_backstage_pass_when_update_quality_then_quality_should_be_zero():
     backstage_pass = Item(BACKSTAGE_PASS, EXPIRED_SELL_IN, DEFAULT_QUALITY)
     gilded_rose = GildedRose([backstage_pass])
