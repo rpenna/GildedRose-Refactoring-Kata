@@ -17,7 +17,7 @@ def max_quality_aged_brie():
     return Item(AGED_BRIE, DEFAULT_SELL_IN, MAX_QUALITY)
 
 
-def test_given_an_aged_brie_item_when_update_quality_then_it_should_increase_quality(
+def test_given_an_aged_brie_item_that_has_not_reached_max_quality_when_update_quality_then_it_should_increase_quality(
     aged_brie,
 ):
     gilded_rose = GildedRose([aged_brie])
