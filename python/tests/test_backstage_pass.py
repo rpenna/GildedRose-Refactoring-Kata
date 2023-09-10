@@ -37,3 +37,10 @@ def test_given_a_medium_term_sell_in_with_max_quality_backstage_pass_when_update
     gilded_rose = GildedRose([backstage_pass])
     gilded_rose.update_quality()
     assert gilded_rose.items[0].quality == MAX_QUALITY
+
+
+def test_given_a_short_term_sell_in_backstage_pass_when_update_quality_then_it_should_increase_quality_by_3():
+    backstage_pass = Item(BACKSTAGE_PASS, SHORT_TERM_SELL_IN, DEFAULT_QUALITY)
+    gilded_rose = GildedRose([backstage_pass])
+    gilded_rose.update_quality()
+    assert gilded_rose.items[0].quality == DEFAULT_QUALITY + 3
