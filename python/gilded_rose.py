@@ -36,6 +36,8 @@ class GildedRose(object):
                 if item.sell_in < 0:
                     if item.quality < 50:
                         item.quality = item.quality + 1
+                item.sell_in = item.sell_in - 1
+                continue
             elif item.name == BACKSTAGE_PASS:
                 self.__update_backstage_pass(item)
                 continue
