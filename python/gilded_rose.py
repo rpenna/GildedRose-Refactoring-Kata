@@ -3,6 +3,7 @@
 #           ToDos
 # 1. Add new item "Conjured"
 # 2. Update README.md
+# 3. Create config file to store constants
 #
 ###############################
 
