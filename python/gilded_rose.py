@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-###############################
+##################################################
 #           ToDos
 # 1. Add new item "Conjured"
 # 2. Update README.md
 # 3. Create config file to store constants
+# 4. Make "update_quality" methods more readable
 #
-###############################
+##################################################
 
 
 from typing import Protocol
