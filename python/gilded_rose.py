@@ -39,9 +39,8 @@ class GildedRose(object):
         item.sell_in = item.sell_in - 1
         if item.sell_in >= 0:
             return
-        else:
-            if item.quality > 0:
-                item.quality = item.quality - 1
+        if item.quality > 0:
+            item.quality = item.quality - 1
 
     def update_quality(self):
         for item in self.items:
@@ -51,7 +50,7 @@ class GildedRose(object):
             if item.name == AGED_BRIE:
                 self.__update_aged_brie(item)
                 continue
-            elif item.name == BACKSTAGE_PASS:
+            if item.name == BACKSTAGE_PASS:
                 self.__update_backstage_pass(item)
                 continue
             self.__update_default(item)
