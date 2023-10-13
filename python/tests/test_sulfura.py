@@ -1,5 +1,5 @@
 import pytest
-from gilded_rose import Item, GildedRose, SULFURAS
+from gilded_rose import Item, GildedRose
 
 
 DEFAULT_SELL_IN = 10
@@ -7,8 +7,8 @@ DEFAULT_QUALITY = 80
 
 
 @pytest.fixture
-def sulfura():
-    return Item(SULFURAS, DEFAULT_SELL_IN, DEFAULT_QUALITY)
+def sulfura(sulfuras_name):
+    return Item(sulfuras_name, DEFAULT_SELL_IN, DEFAULT_QUALITY)
 
 
 def test_given_a_sulfura_item_when_update_quality_then_it_should_keep_the_same_quality_as_before(
