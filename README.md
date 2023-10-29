@@ -2,7 +2,7 @@
 
 Python code refactoring challenge for learning purpose. As every refactoring, the code behavior should NOT change after the improvements. The goal is to make it easier to add a new category of item. 
 
-You can read the [original Gilded Rose Refactoring Kata README here](./original_README.md).
+You can read the [original Gilded Rose Refactoring Kata README here](./original_README.md), as well as the Kata's requirements in many different languages.
 
 ## Prerequisites
 
