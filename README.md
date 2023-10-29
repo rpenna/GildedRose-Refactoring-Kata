@@ -28,7 +28,7 @@ Just run the following pytest command:
     ```
 
 ## Running the code
-Since it's a refactoring challeng code, there is no software to run. The purpose was to not change the code behavior, but make it more readable and easy to maintain.
+Since it's a refactoring challenge code, there is no software to run. The purpose was to not change the code behavior, but make it more readable and easy to maintain.
 
 With the improvements made, it's now easier to add a new item with specific behavior by using the following steps:
 
