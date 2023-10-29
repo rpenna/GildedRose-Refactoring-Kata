@@ -83,6 +83,12 @@ class UpdaterAgedBrie(UpdaterDefaultItem):
         return item
 
 
+class UpdaterConjured(UpdaterDefaultItem):
+    def update_quality(self, item: Item) -> Item:
+        item.quality = decrease_item_quality(item.quality, 2)
+        return item
+
+
 class GildedRose(object):
     def __init__(self, items):
         self.items = items
@@ -90,6 +96,7 @@ class GildedRose(object):
             default_config.get("SULFURAS"): UpdaterSulfuras,
             default_config.get("AGED_BRIE"): UpdaterAgedBrie,
             default_config.get("BACKSTAGE_PASS"): UpdaterBackstagePass,
+            default_config.get("CONJURED"): UpdaterConjured,
         }
 
     def update_quality(self):
