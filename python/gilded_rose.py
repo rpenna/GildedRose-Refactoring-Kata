@@ -52,7 +52,7 @@ class UpdaterDefaultItem:
         return item
 
 
-class UpdaterSulfuras:
+class UpdaterSulfuras(UpdaterDefaultItem):
     def update_quality(self, item: Item) -> Item:
         return item
 
