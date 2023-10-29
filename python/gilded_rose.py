@@ -15,6 +15,8 @@ config = configparser.ConfigParser()
 config_file = os.path.join(os.path.dirname(__file__), "settings.ini")
 config.read(config_file)
 default_config = config["DEFAULT"]
+MIN_QUALITY = int(default_config["MIN_QUALITY"])
+MAX_QUALITY = int(default_config["MAX_QUALITY"])
 
 
 class Item:
@@ -36,11 +38,13 @@ class Updater(Protocol):
 
 
 class UpdaterDefaultItem:
+    def __decrease_item_quality(self, quality: int, amount: int = 1) -> int:
+        return max(MIN_QUALITY, quality - amount)
+
     def update_quality(self, item: Item) -> Item:
-        if item.quality > 0:
-            item.quality = item.quality - 1
+        item.quality = self.__decrease_item_quality(item.quality)
         if item.sell_in < 0:
-            item.quality = item.quality - 1
+            item.quality = self.__decrease_item_quality(item.quality)
         return item
 
     def update_sell_in(self, item: Item) -> Item:
