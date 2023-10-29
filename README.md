@@ -7,7 +7,7 @@ You can read the [original Gilded Rose Refactoring Kata README here](./original_
 ## Prerequisites
 
 * Python 3.10+
-* Pip 32.2.1
+* Pip 23.2.1
 
 ## Installation
 
