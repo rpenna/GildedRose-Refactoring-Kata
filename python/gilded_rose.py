@@ -2,8 +2,7 @@
 #           ToDos
 # 1. Add new item "Conjured"
 # 2. Update README.md
-# 3. Create config file to store constants
-# 4. Make "update_quality" methods more readable
+# 3. Make "update_quality" methods more readable
 #
 ##################################################
 
@@ -13,9 +12,10 @@ from typing import Protocol
 
 
 config = configparser.ConfigParser()
-config_file = os.path.join(os.path.dirname(__file__), 'settings.ini')
+config_file = os.path.join(os.path.dirname(__file__), "settings.ini")
 config.read(config_file)
-default_config = config['DEFAULT']
+default_config = config["DEFAULT"]
+
 
 class Item:
     def __init__(self, name, sell_in, quality):
@@ -79,9 +79,11 @@ class GildedRose(object):
     def __init__(self, items):
         self.items = items
         self.__items_updaters = dict()
-        self.__items_updaters[default_config.get('SULFURAS')] = UpdaterSulfuras
-        self.__items_updaters[default_config.get('AGED_BRIE')] = UpdaterAgedBrie
-        self.__items_updaters[default_config.get('BACKSTAGE_PASS')] = UpdaterBackstagePass
+        self.__items_updaters[default_config.get("SULFURAS")] = UpdaterSulfuras
+        self.__items_updaters[default_config.get("AGED_BRIE")] = UpdaterAgedBrie
+        self.__items_updaters[
+            default_config.get("BACKSTAGE_PASS")
+        ] = UpdaterBackstagePass
 
     def update_quality(self):
         for item in self.items:
