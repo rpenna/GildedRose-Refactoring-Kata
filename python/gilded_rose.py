@@ -87,12 +87,11 @@ class UpdaterAgedBrie(UpdaterDefaultItem):
 class GildedRose(object):
     def __init__(self, items):
         self.items = items
-        self.__items_updaters = dict()
-        self.__items_updaters[default_config.get("SULFURAS")] = UpdaterSulfuras
-        self.__items_updaters[default_config.get("AGED_BRIE")] = UpdaterAgedBrie
-        self.__items_updaters[
-            default_config.get("BACKSTAGE_PASS")
-        ] = UpdaterBackstagePass
+        self.__items_updaters = {
+            default_config.get("SULFURAS"): UpdaterSulfuras,
+            default_config.get("AGED_BRIE"): UpdaterAgedBrie,
+            default_config.get("BACKSTAGE_PASS"): UpdaterBackstagePass,
+        }
 
     def update_quality(self):
         for item in self.items:
