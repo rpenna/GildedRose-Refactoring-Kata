@@ -1,8 +1,7 @@
 ##################################################
 #           ToDos
 # 1. Add new item "Conjured"
-# 2. Update README.md
-# 3. Make "update_quality" methods more readable
+# 2. Update README.md\
 #
 ##################################################
 
