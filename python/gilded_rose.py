@@ -77,18 +77,10 @@ class UpdaterBackstagePass(UpdaterDefaultItem):
             item.quality = increase_item_quality(item.quality)
         return item
 
-    def update_sell_in(self, item: Item) -> Item:
-        item.sell_in -= 1
-        return item
-
 
 class UpdaterAgedBrie(UpdaterDefaultItem):
     def update_quality(self, item: Item) -> Item:
         item.quality = increase_item_quality(item.quality)
-        return item
-
-    def update_sell_in(self, item: Item) -> Item:
-        item.sell_in = item.sell_in - 1
         return item
 
 
