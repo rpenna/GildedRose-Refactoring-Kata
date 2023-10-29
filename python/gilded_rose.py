@@ -19,6 +19,14 @@ MIN_QUALITY = int(default_config["MIN_QUALITY"])
 MAX_QUALITY = int(default_config["MAX_QUALITY"])
 
 
+def decrease_item_quality(quality: int, amount: int = 1) -> int:
+    return max(MIN_QUALITY, quality - amount)
+
+
+def increase_item_quality(quality: int, amount: int = 1) -> int:
+    return min(MAX_QUALITY, quality + amount)
+
+
 class Item:
     def __init__(self, name, sell_in, quality):
         self.name = name
@@ -38,13 +46,10 @@ class Updater(Protocol):
 
 
 class UpdaterDefaultItem:
-    def __decrease_item_quality(self, quality: int, amount: int = 1) -> int:
-        return max(MIN_QUALITY, quality - amount)
-
     def update_quality(self, item: Item) -> Item:
-        item.quality = self.__decrease_item_quality(item.quality)
+        item.quality = decrease_item_quality(item.quality)
         if item.sell_in < 0:
-            item.quality = self.__decrease_item_quality(item.quality)
+            item.quality = decrease_item_quality(item.quality)
         return item
 
     def update_sell_in(self, item: Item) -> Item:
@@ -78,17 +83,13 @@ class UpdaterBackstagePass:
         return item
 
 
-class UpdaterAgedBrie:
+class UpdaterAgedBrie(UpdaterDefaultItem):
     def update_quality(self, item: Item) -> Item:
-        if item.quality < 50:
-            item.quality = item.quality + 1
-        if item.sell_in < 0:
-            if item.quality < 50:
-                item.quality = item.quality + 1
-        item.sell_in = item.sell_in - 1
+        item.quality = increase_item_quality(item.quality)
         return item
 
     def update_sell_in(self, item: Item) -> Item:
+        item.sell_in = item.sell_in - 1
         return item
 
 
